@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+import { useState, useEffect } from "react"
 import './App.css';
+import Formulario from "./components/Formulario"
+import PintarDatos from "./components/PintarDatos"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+	  const [nombrePersonaje, setNombrePersonaje] = useState("")	
+		
+
+		return (
+				<div className="App">
+						<h1>App Rick and Morty</h1>
+						<Formulario setNombrePersonaje={setNombrePersonaje}/>
+						<PintarDatos nombrePersonaje={nombrePersonaje}/>
+				</div>
   );
 }
 
